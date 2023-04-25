@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/kartikeyapro/ks.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/nirmalaputra/project.git'
 				
             }
 		}
@@ -36,5 +36,13 @@ pipeline {
 		    sh 'mvn package'
 		  }
 		}
+		stage ('Maven Deploy')
+		{
+		  steps {
+		    sh 'mvn deploy'
+		  }
+		}
+		
+		
     }
 }
