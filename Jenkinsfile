@@ -30,7 +30,7 @@ pipeline {
 		    sh 'mvn compile'
 		  }
 		}
-		stage ('Code Scan')
+		stage ('Code Scan'')
 		{
 		  steps {
 		    sh 'mvn sonar:sonar -Dsonar.projectKey=ksproject -Dsonar.host.url=http://13.232.58.230:9000 -Dsonar.login=4c26a78f1d69035ae5fb3bbb900ea94efc44844d'
